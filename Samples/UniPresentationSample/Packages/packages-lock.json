@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "com.cysharp.unitask": {
+      "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "52cdadc03519a86af7d80fa2f60dbe684acf247e"
+    },
+    "com.neuecc.unirx": {
+      "version": "https://github.com/neuecc/UniRx.git?path=Assets/Plugins/UniRx/Scripts",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "284d5c50d3f1ddd9fa7df3d382ea904732a9c2ff"
+    },
     "com.unity.2d.animation": {
       "version": "5.0.3",
       "depth": 0,
@@ -155,6 +169,40 @@
       "dependencies": {
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
+      }
+    },
+    "com.veyronsakai.animationutilities": {
+      "version": "https://github.com/VeyronSakai/AnimationUtilities.git?path=com.veyronsakai.animationutilities/",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.test-framework": "1.0.0",
+        "com.unity.ext.nunit": "1.0.0",
+        "com.cysharp.unitask": "2.1.0"
+      },
+      "hash": "b2244d993afaf1fdd1bd66f2ce68cd30c336e8f9"
+    },
+    "com.veyronsakai.prefabgenerator": {
+      "version": "https://github.com/VeyronSakai/PrefabGenerator.git?path=com.veyronsakai.prefabgenerator/",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.test-framework": "1.0.0",
+        "com.unity.ext.nunit": "1.0.0"
+      },
+      "hash": "c9ec96dfca2d00c68cfd1c6563bc021427baf4c0"
+    },
+    "com.veyronsakai.unipresentation": {
+      "version": "file:../../../com.veyronsakai.unipresentation",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.test-framework": "1.0.0",
+        "com.unity.ext.nunit": "1.0.0",
+        "com.cysharp.unitask": "2.1.0",
+        "com.neuecc.unirx": "7.1.0",
+        "com.veyronsakai.animationutilities": "0.0.1",
+        "com.veyronsakai.prefabgenerator": "0.0.4"
       }
     },
     "com.unity.modules.ai": {

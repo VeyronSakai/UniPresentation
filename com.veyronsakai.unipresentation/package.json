@@ -1,17 +1,18 @@
 {
-    "name": "com.veyronsakai.unipresentation",
-    "displayName": "UniPresentation",
-    "version": "0.0.1",
-    "unity": "2020.2",
-    "description": "This provides the functionality needed for the Presentation layer.",
-    "dependencies": {
-        "com.unity.test-framework": "1.0.0",
-        "com.unity.ext.nunit": "1.0.0",
-        "com.cysharp.unitask": "2.1.0",
-        "com.veyronsakai.animationutilities": "0.0.1",
-        "com.veyronsakai.prefabgenerator": "0.0.4"
-    },
-    "author": {
-        "name": "Yuki Sakai"
-      }
+  "name": "com.veyronsakai.unipresentation",
+  "displayName": "UniPresentation",
+  "version": "0.0.1",
+  "unity": "2020.2",
+  "description": "This provides the functionality needed for the Presentation layer.",
+  "dependencies": {
+    "com.unity.test-framework": "1.0.0",
+    "com.unity.ext.nunit": "1.0.0",
+    "com.cysharp.unitask": "2.1.0",
+    "com.neuecc.unirx": "7.1.0",
+    "com.veyronsakai.animationutilities": "0.0.1",
+    "com.veyronsakai.prefabgenerator": "0.0.4"
+  },
+  "author": {
+    "name": "Yuki Sakai"
+  }
 }
