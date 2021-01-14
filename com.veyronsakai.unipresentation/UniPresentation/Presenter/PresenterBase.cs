@@ -1,6 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using PrefabGenerator;
-using UniPresentation.Shared.Canvases;
+using UniPresentation.Canvases;
 using UniPresentation.View;
 
 namespace UniPresentation.Presenter

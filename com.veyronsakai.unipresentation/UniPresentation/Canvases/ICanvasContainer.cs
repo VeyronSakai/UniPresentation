@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace UniPresentation.Shared.Canvases
+namespace UniPresentation.Canvases
 {
     public interface ICanvasContainer
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using UniPresentation.Canvases;
 using UniPresentation.Presenter;
-using UniPresentation.Shared.Canvases;
 using UniPresentation.View;
 
 namespace UniPresentation.Page
@@ -26,12 +26,10 @@ namespace UniPresentation.Page
             return presenter;
         }
 
-        protected void ShowPage<TPage, TCanvasContainer>(TCanvasContainer canvasContainer)
-            where TPage : IPage
-            where TCanvasContainer : ICanvasContainer
+        protected void ShowPage<TPage>(ICanvasContainer canvasContainer) where TPage : IPage
         {
             SetActivePage(false);
-            PageFactory<TPage, TCanvasContainer>.Create(canvasContainer);
+            PageFactory<TPage>.Create(canvasContainer);
         }
 
         public virtual void Dispose()

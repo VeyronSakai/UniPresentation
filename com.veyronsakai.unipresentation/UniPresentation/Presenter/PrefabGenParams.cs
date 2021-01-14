@@ -1,4 +1,4 @@
-﻿using UniPresentation.Shared.Canvases;
+﻿using UniPresentation.Canvases;
 using UnityEngine;
 
 namespace UniPresentation.Presenter

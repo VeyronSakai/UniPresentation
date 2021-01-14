@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UniPresentation.Shared.Canvases
+namespace UniPresentation.Canvases
 {
     public interface ICanvas
     {
