@@ -15,7 +15,7 @@ namespace UniPresentation.Hierarchy
             _canvasesBuilder = canvasesBuilder;
         }
 
-        public Hierarchy BuildHierarchy<TCamera, TCanvasContainer>
+        public Hierarchy BuildHierarchy<TCamera>
         (
             string cameraRootName,
             string cameraPrefabPath,
@@ -24,14 +24,13 @@ namespace UniPresentation.Hierarchy
             string touchBlockWindowPrefabPath
         )
             where TCamera : CameraBase
-            where TCanvasContainer : ICanvasContainer
         {
             var camera = _cameraBuilder.BuildCamera<TCamera>(cameraPrefabPath, cameraRootName);
 
             var canvasPathParams = new CanvasPathParams(canvasRootName, canvasPaths);
 
             var canvasContainer =
-                _canvasesBuilder.BuildCanvases<TCanvasContainer>(camera, canvasPathParams,
+                _canvasesBuilder.BuildCanvases(camera, canvasPathParams,
                     touchBlockWindowPrefabPath);
 
             var hierarchy = new Hierarchy(canvasContainer, camera);

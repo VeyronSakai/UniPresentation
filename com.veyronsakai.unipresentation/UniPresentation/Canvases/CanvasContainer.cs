@@ -2,7 +2,7 @@
 
 namespace UniPresentation.Canvases
 {
-    public class CanvasContainer : ICanvasContainer
+    public class CanvasContainer
     {
         public List<ICanvas> Canvases { get; }
 

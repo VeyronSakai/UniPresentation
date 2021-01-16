@@ -10,7 +10,7 @@ namespace UniPresentation.Page
     {
         private readonly List<IPresenter> _presenters = new List<IPresenter>();
 
-        protected PageBase(ICanvasContainer canvasContainer)
+        protected PageBase(CanvasContainer canvasContainer)
         {
         }
 
@@ -26,7 +26,7 @@ namespace UniPresentation.Page
             return presenter;
         }
 
-        protected void ShowPage<TPage>(ICanvasContainer canvasContainer) where TPage : IPage
+        protected void ShowPage<TPage>(CanvasContainer canvasContainer) where TPage : IPage
         {
             SetActivePage(false);
             PageFactory<TPage>.Create(canvasContainer);

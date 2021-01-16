@@ -10,7 +10,7 @@ namespace UniPresentation.Canvases
     public sealed class CanvasesBuilder
     {
         private readonly Transform _parentTransform;
-        private ICanvasContainer _canvasContainer;
+        private CanvasContainer _canvasContainer;
         private readonly List<ICanvas> _canvasList = new List<ICanvas>();
 
         public CanvasesBuilder(Transform parentTransform)
@@ -18,9 +18,8 @@ namespace UniPresentation.Canvases
             _parentTransform = parentTransform;
         }
 
-        public ICanvasContainer BuildCanvases<T>(ICamera renderCamera, CanvasPathParams canvasPathParams,
+        public CanvasContainer BuildCanvases(ICamera renderCamera, CanvasPathParams canvasPathParams,
             string touchBlockPrefabPath)
-            where T : ICanvasContainer
         {
             var canvasRoot = EmptyObjectFactory.Create(canvasPathParams.CanvasRootName, _parentTransform);
             var rootTransform = canvasRoot.transform;
@@ -30,8 +29,8 @@ namespace UniPresentation.Canvases
                 var canvas = CreateCanvas(renderCamera, rootTransform, canvasPath, touchBlockPrefabPath);
                 _canvasList.Add(canvas);
             }
-
-            _canvasContainer = CanvasContainerFactory<T>.Create(_canvasList);
+            
+            _canvasContainer = new CanvasContainer(_canvasList);
 
             return _canvasContainer;
         }

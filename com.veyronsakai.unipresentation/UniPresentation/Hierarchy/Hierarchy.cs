@@ -5,10 +5,10 @@ namespace UniPresentation.Hierarchy
 {
     public class Hierarchy
     {
-        public ICanvasContainer CanvasContainer;
+        public CanvasContainer CanvasContainer;
         public ICamera Camera;
 
-        public Hierarchy(ICanvasContainer canvasContainer, ICamera camera)
+        public Hierarchy(CanvasContainer canvasContainer, ICamera camera)
         {
             CanvasContainer = canvasContainer;
             Camera = camera;
