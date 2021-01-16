@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using UniPresentation.Camera;
+using UniPresentation.Cameras;
 using UniPresentation.Canvases;
 
 namespace UniPresentation.Hierarchy

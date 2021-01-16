@@ -1,5 +1,5 @@
 using PrefabGenerator;
-using UniPresentation.Camera;
+using UniPresentation.Cameras;
 using UniPresentation.TouchBlock;
 using UnityEngine;
 

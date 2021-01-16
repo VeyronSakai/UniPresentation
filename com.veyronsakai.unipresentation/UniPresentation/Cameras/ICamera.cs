@@ -1,4 +1,4 @@
-﻿namespace UniPresentation.Camera
+﻿namespace UniPresentation.Cameras
 {
     public interface ICamera
     {

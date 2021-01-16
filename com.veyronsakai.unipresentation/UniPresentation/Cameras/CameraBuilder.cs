@@ -1,7 +1,7 @@
 ﻿using PrefabGenerator;
 using UnityEngine;
 
-namespace UniPresentation.Camera
+namespace UniPresentation.Cameras
 {
     public sealed class CameraBuilder
     {

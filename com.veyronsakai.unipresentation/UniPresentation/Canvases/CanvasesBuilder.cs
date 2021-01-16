@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using PrefabGenerator;
-using UniPresentation.Camera;
+using UniPresentation.Cameras;
 using UniPresentation.Presenter;
 using UniPresentation.TouchBlock;
 using UnityEngine;

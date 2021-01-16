@@ -1,6 +1,6 @@
 ﻿using PrefabGenerator;
 
-namespace UniPresentation.Camera
+namespace UniPresentation.Cameras
 {
     public abstract class CameraBase : PrefabBase, ICamera
     {
