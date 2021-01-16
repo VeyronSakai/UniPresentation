@@ -8,18 +8,18 @@ namespace UniPresentation.Presenter
     /// </summary>
     public readonly struct PrefabGenParams
     {
-        public readonly ICanvas AppCanvas;
+        public readonly ICanvas targetCanvas;
         public readonly string PrefabPath;
 
         public PrefabGenParams(ICanvas canvas, string prefabPath)
         {
-            AppCanvas = canvas;
+            targetCanvas = canvas;
             PrefabPath = prefabPath;
         }
 
         public Transform GetCanvasTransform()
         {
-            return AppCanvas.GetTransform();
+            return targetCanvas.GetTransform();
         }
     }
 }

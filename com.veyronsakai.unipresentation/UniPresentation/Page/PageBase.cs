@@ -28,8 +28,8 @@ namespace UniPresentation.Page
 
         protected void ShowPage<TPage>(CanvasContainer canvasContainer) where TPage : IPage
         {
-            SetActivePage(false);
             PageFactory<TPage>.Create(canvasContainer);
+            Dispose();
         }
 
         public virtual void Dispose()
