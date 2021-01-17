@@ -7,32 +7,20 @@ using UnityEngine;
 
 namespace UniPresentation.Canvases
 {
-    public sealed class CanvasesBuilder
+    public static class CanvasBuilder
     {
-        private readonly Transform _parentTransform;
-        private CanvasContainer _canvasContainer;
-        private readonly List<ICanvas> _canvasList = new List<ICanvas>();
-
-        public CanvasesBuilder(Transform parentTransform)
-        {
-            _parentTransform = parentTransform;
-        }
-
-        public CanvasContainer BuildCanvases(ICamera renderCamera, CanvasPathParams canvasPathParams,
-            string touchBlockPrefabPath)
-        {
-            var canvasRoot = EmptyObjectFactory.Create(canvasPathParams.CanvasRootName, _parentTransform);
-            var rootTransform = canvasRoot.transform;
-
+        public static CanvasContainer BuildCanvases(ICamera renderCamera, CanvasPathParams canvasPathParams,
+            string touchBlockPrefabPath, Transform rootTransform)
+        { 
+            var canvasList = new List<ICanvas>();
+            
             foreach (var canvasPath in canvasPathParams.CanvasPaths)
             {
                 var canvas = CreateCanvas(renderCamera, rootTransform, canvasPath, touchBlockPrefabPath);
-                _canvasList.Add(canvas);
+                canvasList.Add(canvas);
             }
             
-            _canvasContainer = new CanvasContainer(_canvasList);
-
-            return _canvasContainer;
+            return new CanvasContainer(canvasList);
         }
 
         private static ICanvas CreateCanvas(ICamera renderCamera, Transform rootTransform, string canvasPrefabPath,
