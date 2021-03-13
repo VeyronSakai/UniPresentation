@@ -7,13 +7,54 @@ namespace UniPresentation.Canvases
 {
     public abstract class CanvasBase : PrefabBase, ICanvas
     {
-        public abstract void SetCamera(ICamera targetCamera);
-        public abstract Camera GetCamera();
-        public abstract Transform GetTransform();
+        private Transform _canvasTransform;
+        private Canvas _rawCanvas;
+        private UITouchBlockPresenter _touchBlockPresenter;
+        private ICamera _targetCamera;
 
-        public abstract void SetActiveTouchBlockWindow(bool isActive);
+        public void SetCamera(ICamera targetCamera)
+        {
+            if (_rawCanvas == null) _rawCanvas = GetComponent<UnityEngine.Canvas>();
 
-        public abstract bool IsTouchBlockEnabled();
-        public abstract void SetTouchBlockPresenter(UITouchBlockPresenter presenter);
+            _targetCamera = targetCamera;
+
+            _rawCanvas.worldCamera = targetCamera.GetRawCamera();
+        }
+
+        public Camera GetCamera()
+        {
+            return _targetCamera.GetRawCamera();
+        }
+
+        public Transform GetTransform()
+        {
+            if (_canvasTransform == null) _canvasTransform = transform;
+
+            return _canvasTransform;
+        }
+
+        public void SetActiveTouchBlockWindow(bool isActive)
+        {
+            _touchBlockPresenter.SetActiveView(isActive);
+        }
+
+        public bool IsTouchBlockEnabled()
+        {
+            return _touchBlockPresenter.IsViewActive();
+        }
+
+        public void SetTouchBlockPresenter(UITouchBlockPresenter presenter)
+        {
+            _touchBlockPresenter = presenter;
+        }
+
+        public void OnDestroy()
+        {
+            if (_touchBlockPresenter != null)
+            {
+                _touchBlockPresenter.Dispose();
+                _touchBlockPresenter = null;
+            }
+        }
     }
 }
